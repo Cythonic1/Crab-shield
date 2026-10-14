@@ -8,15 +8,13 @@ mod manage;
 mod singature;
 mod utils;
 use clap::{Parser, Subcommand};
-use env_logger::Builder;
-use log::LevelFilter;
 use log::info;
-use log::warn;
-use nix::libc::getuid;
 use std::path::PathBuf;
 use std::process::exit;
 use std::sync::{Arc, Mutex, atomic::AtomicBool};
 
+use crate::utils::helpers::init_logger;
+use crate::utils::helpers::{check_running_user, make_service};
 use crate::{
     alert::handler_alert::AlertManager,
     config_parser::parser::Config,
@@ -53,6 +51,8 @@ enum SubCommands {
         #[arg(short, long, default_value_t = false)]
         verbose: bool,
     },
+    /// Start the crab sheild as a service service
+    MakeService,
 }
 
 #[derive(Parser)]
@@ -68,30 +68,6 @@ struct Cli {
     command: SubCommands,
 }
 
-fn check_running_user() {
-    unsafe {
-        let uid = getuid();
-        if uid != 0 {
-            warn!("You need to run as root");
-            exit(1);
-        }
-    }
-}
-
-fn init_logger(verbose: bool) {
-    let log_level = if verbose {
-        LevelFilter::Debug
-    } else {
-        LevelFilter::Info
-    };
-
-    Builder::new()
-        .filter_level(log_level)
-        .format_timestamp_secs()
-        .init();
-}
-
-// implement file parser
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     check_running_user();
@@ -109,7 +85,11 @@ async fn main() -> anyhow::Result<()> {
         SubCommands::GenerateConfig { verbose } => {
             init_logger(*verbose);
             Config::default();
-            info!("Log file has been generated");
+            info!("Log file has been generated make sure to update yours");
+            exit(0);
+        }
+        SubCommands::MakeService => {
+            make_service("crab_sheild");
             exit(0);
         }
     };

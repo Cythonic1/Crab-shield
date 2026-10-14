@@ -1,0 +1,12 @@
+/home/misabear/Desktop/C++/RansomwareV2/build/CMakeFiles/Randomware.dir
+/home/misabear/Desktop/C++/RansomwareV2/build/CMakeFiles/edit_cache.dir
+/home/misabear/Desktop/C++/RansomwareV2/build/CMakeFiles/rebuild_cache.dir
+/home/misabear/Desktop/C++/RansomwareV2/build/libs/CLI11/CMakeFiles/edit_cache.dir
+/home/misabear/Desktop/C++/RansomwareV2/build/libs/CLI11/CMakeFiles/rebuild_cache.dir
+/home/misabear/Desktop/C++/RansomwareV2/build/libs/CLI11/fuzz/CMakeFiles/edit_cache.dir
+/home/misabear/Desktop/C++/RansomwareV2/build/libs/CLI11/fuzz/CMakeFiles/rebuild_cache.dir
+/home/misabear/Desktop/C++/RansomwareV2/build/libs/CLI11/src/CMakeFiles/CLI11.dir
+/home/misabear/Desktop/C++/RansomwareV2/build/libs/CLI11/src/CMakeFiles/edit_cache.dir
+/home/misabear/Desktop/C++/RansomwareV2/build/libs/CLI11/src/CMakeFiles/rebuild_cache.dir
+/home/misabear/Desktop/C++/RansomwareV2/build/libs/CLI11/single-include/CMakeFiles/edit_cache.dir
+/home/misabear/Desktop/C++/RansomwareV2/build/libs/CLI11/single-include/CMakeFiles/rebuild_cache.dir

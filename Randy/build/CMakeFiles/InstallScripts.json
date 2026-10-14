@@ -1,0 +1,11 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/misabear/Desktop/C++/RansomwareV2/build/cmake_install.cmake",
+		"/home/misabear/Desktop/C++/RansomwareV2/build/libs/CLI11/cmake_install.cmake",
+		"/home/misabear/Desktop/C++/RansomwareV2/build/libs/CLI11/fuzz/cmake_install.cmake",
+		"/home/misabear/Desktop/C++/RansomwareV2/build/libs/CLI11/src/cmake_install.cmake",
+		"/home/misabear/Desktop/C++/RansomwareV2/build/libs/CLI11/single-include/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

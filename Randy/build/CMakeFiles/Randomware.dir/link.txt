@@ -1,0 +1,1 @@
+/usr/sbin/c++ -fsanitize=address -fno-omit-frame-pointer -g -fsanitize=address -Wl,--dependency-file=CMakeFiles/Randomware.dir/link.d CMakeFiles/Randomware.dir/src/filer.cc.o CMakeFiles/Randomware.dir/src/main.cc.o CMakeFiles/Randomware.dir/src/randy.cc.o CMakeFiles/Randomware.dir/src/sodium.cc.o -o Randomware  /usr/lib/libsodium.so

@@ -1,4 +1,4 @@
-use std::{env, path::PathBuf, str::FromStr};
+use std::{path::PathBuf, process::exit};
 
 use log::{info, warn};
 use serde::{Deserialize, Serialize};
@@ -43,8 +43,6 @@ impl Default for Config {
     fn default() -> Self {
         // This should be the root user always
 
-        let default_path = Config::default_path();
-
         let config = Config {
             min_severity_to_report: Severity::Medium,
             splunk_path: String::from("http://localhost:8088"),
@@ -59,22 +57,18 @@ impl Default for Config {
                 String::from("/etc/"),
             ],
             virus_total_api_key: String::from("API_KEY_HERE"),
-            module_path: String::from(
-                "/home/misabear/Desktop/FYP/project/learn_bpf/extract_sysCalls_to_map/testing/ml/rf_iris.onnx",
-            ),
-            module_scale_path: String::from(
-                "/home/misabear/Desktop/FYP/project/learn_bpf/extract_sysCalls_to_map/testing/ml/scaler.json",
-            ),
+            module_path: String::from("$YOURPATH/rf_iris.onnx"),
+            module_scale_path: String::from("$YOURPATH/scaler.json"),
             hash_algorith: AlgorithmType::MD5,
         };
 
         let config_as_toml_string = toml::to_string(&config).expect("Error serializing config");
 
-        match std::fs::write(default_path, config_as_toml_string) {
+        match std::fs::write("root/.crab_shield.toml", config_as_toml_string) {
             Ok(res) => info!("Config has been written to {:?}", res),
             Err(err) => {
                 warn!("Error writing config {}", err);
-                panic!();
+                exit(1);
             }
         }
         config
@@ -94,7 +88,7 @@ impl Config {
             }
             Err(err) => {
                 warn!("Error finding config file: {}", err);
-                panic!();
+                exit(1);
             }
         };
 
@@ -109,25 +103,9 @@ impl Config {
                     "Failed to parse config file at {:?}: {}",
                     config_file_path, err
                 );
-                panic!("Invalid config file format, cannot continue.");
+                warn!("Invalid config file format, cannot continue.");
+                exit(1);
             }
-        }
-    }
-
-    fn default_path() -> PathBuf {
-        // let mut home_path_of_running_user = match env::home_dir() {
-        //     Some(path) => {
-        //         info!("Home path of the running user found under {:?}", path);
-        //         path
-        //     }
-        //     None => {
-        //         warn!("Unable to detect home path of the running user");
-        //         panic!();
-        //     }
-        // };
-        match PathBuf::from_str("/root/.crab_shield.toml") {
-            Ok(path) => path,
-            Err(err) => panic!("{err}"),
         }
     }
 }

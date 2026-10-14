@@ -1,0 +1,26 @@
+[
+{
+  "directory": "/home/misabear/Desktop/C++/RansomwareV2/build",
+  "command": "/usr/sbin/c++  -I/home/misabear/Desktop/C++/RansomwareV2/includes -fsanitize=address -fno-omit-frame-pointer -g -std=gnu++23 -o CMakeFiles/Randomware.dir/src/filer.cc.o -c /home/misabear/Desktop/C++/RansomwareV2/src/filer.cc",
+  "file": "/home/misabear/Desktop/C++/RansomwareV2/src/filer.cc",
+  "output": "CMakeFiles/Randomware.dir/src/filer.cc.o"
+},
+{
+  "directory": "/home/misabear/Desktop/C++/RansomwareV2/build",
+  "command": "/usr/sbin/c++  -I/home/misabear/Desktop/C++/RansomwareV2/includes -fsanitize=address -fno-omit-frame-pointer -g -std=gnu++23 -o CMakeFiles/Randomware.dir/src/main.cc.o -c /home/misabear/Desktop/C++/RansomwareV2/src/main.cc",
+  "file": "/home/misabear/Desktop/C++/RansomwareV2/src/main.cc",
+  "output": "CMakeFiles/Randomware.dir/src/main.cc.o"
+},
+{
+  "directory": "/home/misabear/Desktop/C++/RansomwareV2/build",
+  "command": "/usr/sbin/c++  -I/home/misabear/Desktop/C++/RansomwareV2/includes -fsanitize=address -fno-omit-frame-pointer -g -std=gnu++23 -o CMakeFiles/Randomware.dir/src/randy.cc.o -c /home/misabear/Desktop/C++/RansomwareV2/src/randy.cc",
+  "file": "/home/misabear/Desktop/C++/RansomwareV2/src/randy.cc",
+  "output": "CMakeFiles/Randomware.dir/src/randy.cc.o"
+},
+{
+  "directory": "/home/misabear/Desktop/C++/RansomwareV2/build",
+  "command": "/usr/sbin/c++  -I/home/misabear/Desktop/C++/RansomwareV2/includes -fsanitize=address -fno-omit-frame-pointer -g -std=gnu++23 -o CMakeFiles/Randomware.dir/src/sodium.cc.o -c /home/misabear/Desktop/C++/RansomwareV2/src/sodium.cc",
+  "file": "/home/misabear/Desktop/C++/RansomwareV2/src/sodium.cc",
+  "output": "CMakeFiles/Randomware.dir/src/sodium.cc.o"
+}
+]
